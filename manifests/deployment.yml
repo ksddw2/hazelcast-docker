@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: hazelcast-server 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hazelcast-server 
+    spec:
+      containers:
+        - name: hazelcast-server 
+          image: clearingprotocontainerregistry.azurecr.io/hazelcast-server 
+          ports:
+          - containerPort: 5701
